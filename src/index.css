@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&family=Outfit:wght@400;600;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand: #00f0ff;
+  --color-brand-glow: rgba(0, 240, 255, 0.4);
+  
+  /* Override emerald classes to match our premium neon blue brand */
+  --color-emerald-50: rgba(0, 240, 255, 0.05);
+  --color-emerald-100: rgba(0, 240, 255, 0.1);
+  --color-emerald-200: rgba(0, 240, 255, 0.2);
+  --color-emerald-300: rgba(0, 240, 255, 0.35);
+  --color-emerald-400: #38bdf8;
+  --color-emerald-500: #00e5ff;
+  --color-emerald-600: #0284c7;
+  --color-emerald-700: #0369a1;
+  --color-emerald-800: #075985;
+  --color-emerald-900: #0c4a6e;
+
+  /* Override lime to matches the electric cyan shade */
+  --color-lime-50: rgba(59, 130, 246, 0.05);
+  --color-lime-100: rgba(59, 130, 246, 0.1);
+  --color-lime-200: rgba(59, 130, 246, 0.2);
+  --color-lime-300: rgba(59, 130, 246, 0.35);
+  --color-lime-400: #60a5fa;
+  --color-lime-500: #3b82f6;
+  --color-lime-600: #2563eb;
+  --color-lime-700: #1d4ed8;
+  --color-lime-800: #1e40af;
+  --color-lime-900: #1e3a8a;
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+/* Base style customizations */
+body {
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Glassmorphism utility presets */
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+}
+
+.glass-panel-dark {
+  background: rgba(8, 10, 22, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 240, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 0 12px rgba(0, 240, 255, 0.02);
+}
+
+.glow-blue {
+  box-shadow: 0 0 35px rgba(0, 240, 255, 0.15);
+}
+
+.glow-blue-intensity {
+  box-shadow: 0 0 45px rgba(0, 240, 255, 0.25), inset 0 0 15px rgba(0, 240, 255, 0.1);
+}
+
+/* Smooth custom slide effects and floating animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+
+@keyframes float-reverse {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-1deg); }
+}
+
+.animate-float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 9s ease-in-out infinite;
+}
+
