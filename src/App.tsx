@@ -236,6 +236,8 @@ export default function App() {
           window.location.hash = `#/calculators/graphing-calculator`;
         } else if (slug === 'gpa-calculator') {
           window.location.hash = `#/calculators/gpa-calculator`;
+        } else if (slug === 'subnet-mask-calculator') {
+          window.location.hash = `#/calculators/subnet-mask-calculator`;
         } else {
           window.location.hash = `#/${calc.category}/${calc.slug}`;
         }

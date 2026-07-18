@@ -45,6 +45,7 @@ import ConcreteCalculator from './concrete-calculator/ConcreteCalculator';
 import ConstructionCalculator from './construction-calculator/ConstructionCalculator';
 import LoveCalculator from './love-calculator/LoveCalculator';
 import CarPaymentCalculator from './car-payment-calculator/CarPaymentCalculator';
+import SubnetMaskCalculator from './SubnetMaskCalculator';
 
 interface CalculatorCardProps {
   calculator: Calculator;
@@ -576,6 +577,14 @@ export default function CalculatorCard({ calculator, onNavigate }: CalculatorCar
           <span className="text-blue-600 dark:text-cyan-400 font-bold">{calculator.name}</span>
         </nav>
         <CarPaymentCalculator />
+      </div>
+    );
+  }
+
+  if (calculator.slug === 'subnet-mask-calculator') {
+    return (
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <SubnetMaskCalculator onNavigate={onNavigate} />
       </div>
     );
   }
